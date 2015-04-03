@@ -38,4 +38,4 @@ REMOVE_OLD_NIGHTLY_BUILD=1
 MODULEFILE_DIR=/etc/modulefiles/bgclang
 
 # If set to '1', will install a template-generated modulefile in MODULEFILE_DIR
-INSTALL_MODULEFILE=1
+INSTALL_MODULEFILE=0
