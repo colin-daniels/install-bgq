@@ -1,0 +1,17 @@
+#%Module1.0
+module-whatis "LLVM/clang for Blue Gene/Q version: VERSION"
+
+set prefix PREFIX
+
+## CHOST
+setenv CHOST powerpc64-bgq-linux
+
+## Non-MPI compilers
+append-path PATH $prefix/wbin
+setenv CC   $prefix/wbin/powerpc64-bgq-linux-clang
+setenv CXX  $prefix/wbin/powerpc64-bgq-linux-clang++11
+
+## MPI compiler wrappers
+prepend-path  PATH $prefix/mpi/bgclang/bin
+setenv MPICC  $prefix/mpi/bgclang/bin/mpiclang
+setenv MPICXX $prefix/mpi/bgclang/bin/mpic++11

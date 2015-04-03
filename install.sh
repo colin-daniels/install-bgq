@@ -49,4 +49,13 @@ rpm -Uhv --dbpath $RPMDBPATH --prefix $PREFIX_BASE/$VERSION \
         $RPMDIR/bgclang-sleef-r*.ppc64.rpm
 echo
 
+# Install modulefile
+if [ $INSTALL_MODULEFILE -eq 1 ]; then
+  echo "Installing modulefile to $MODULEFILE_DIR/$VERSION..."
+  # Set path and version in the template and copy the file
+  sed "s@VERSION@$VERSION@" $DIR/modulefile-template \
+    | sed "s@PREFIX@$PREFIX_BASE/$VERSION@" > $MODULEFILE_DIR/$VERSION
+  echo
+fi
+
 echo "Done."

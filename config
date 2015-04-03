@@ -23,3 +23,9 @@ NIGHTLY_BUILD_DIR=$PREFIX_BASE/nightly
 
 # If set to '1', the previous nightly build of bgclang will be removed
 REMOVE_OLD_NIGHTLY_BUILD=1
+
+# Modulefile destination directory
+MODULEFILE_DIR=/etc/modulefiles/bgclang
+
+# If set to '1', will install a template-generated modulefile in MODULEFILE_DIR
+INSTALL_MODULEFILE=1
