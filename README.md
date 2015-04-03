@@ -21,6 +21,16 @@ Typically, you only need to modify the following variables:
 * PREFIX\_BASE
 * GCC472\_PATH
 
+If performing installation over SSH, these additional variables need to be modified:
+* REMOTE\_RPMDIR
+* SSH\_COMMAND
+* REMOTE\_TEMP
+
+If your system additionally uses the Modules package and you wish to generate
+a modulefile for your install from a template, the following must also be
+modified:
+* INSTALL\_MODULEFILE
+* MODULEFILE\_DIR
 
 Getting bgclang
 ---------------
@@ -44,6 +54,15 @@ Run `./install.sh <version>`.
 Optional: if you need change the location of the GCC 4.7.2 toolchain files, you
 need to run `./modify_path_472.sh <version>` after the installation.
 
+Remote install
+--------------
+
+If your system does not allow outgoing connections and you would like to
+install over SSH, first:
+* Download files locally using `./download.sh <version>`.
+* Ensure remote-install related options are set correctly in `config`.
+
+Run `./remote-install.sh <version>`.
 
 Cron job
 --------

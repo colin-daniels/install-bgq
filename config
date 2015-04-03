@@ -9,6 +9,16 @@ RPMDBPATH=/homeb/zam/scprod/bgclang/rpm/$VERSION
 # Prefix base (w/o version) of clang installations
 PREFIX_BASE=/bgsys/local/clang
 
+# SSH command used for rsync and remote install
+SSH_COMMAND="ssh -A USER@landingpad.example.org ssh q"
+
+# If performing a remote install, the directory to which locally-downloaded
+# RPM files will be uploaded to
+REMOTE_RPMDIR=/gpfs/u/home/CMND/CMNDcldn/scratch/temp
+
+# If set to '1', will remove remote RPM files after install is finished
+REMOTE_TEMP=1
+
 # Path to gcc/4.7.2 files
 GCC472_PATH=/bgsys/local/clang/V1R2M1_base_4.7.2
 
